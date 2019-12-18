@@ -11,6 +11,8 @@ body{
     background-size: cover;
     background-position: center;
 }
+
+/* De styling van de menubalk */
 nav{
     background-color: rgba(0,0,0,0.75);
     height: 60px;
