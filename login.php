@@ -22,13 +22,13 @@ session_start();
         <li><a href="contact.php">Contact</a></li>
         <li><a href="index.php">Reserveren</a>
             <ul>
-                <li><a href="createAcc.php">Registreren</a></li>
                 <?php
                 if (isset($_SESSION['userID'])){
                     echo '<li><a href="profile.php">Mijn Profiel</a></li>';
                 }
                 else {
                     echo '<li><a href="login.php">Inloggen</a></li>';
+                    echo '<li><a href="createAcc.php">Registreren</a></li>';
                 }
                 ?>
             </ul>
