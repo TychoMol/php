@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="css/createAcc.css">
 </head>
 <body>
+//NAV is het menu
 <nav>
     <ul>
         <li><a href="#">Coaching</a></li>
@@ -22,11 +23,14 @@
         <li><a href="contact.php">Contact</a></li>
         <li><a href="index.php">Reserveren</a>
             <ul>
-                <li><a href="login.php">Inloggen</a></li>
-                <li><a href="createAcc.php">Registreren</a></li>
                 <?php
+                //als de gebruiker is ingelogd staat er profiel, anders login en registreren
                 if (isset($_SESSION['userID'])){
                     echo '<li><a href="profile.php">Mijn Profiel</a></li>';
+                }
+                else {
+                    echo '<li><a href="login.php">Inloggen</a></li>';
+                    echo '<li><a href="createAcc.php">Registreren</a></li>';
                 }
                 ?>
             </ul>
@@ -38,6 +42,7 @@
             Account Aanmaken
         </h1>
         <?php
+        //Hier worden de foutcodes getoond op het scherm.
             if (isset($_GET["error"]))
                 if ($_GET["error"] == "emptyfields") {
                     echo '<p class="signupError">U heeft één of meerdere velden open gelaten!</p>';
@@ -55,6 +60,7 @@
                     echo '<p class="signupError">Het wachtwoord moet minimaal 6 tekens hebben!</p>';
             }
             ?>
+        //Dit is het invul formulier om een nieuwe gebruiker aan te maken
         <p>Vul hieronder uw gegevens in om een account aan te maken.</p>
         <p>Heeft u al een account? Log dan in door <a href="login.php">HIER</a> te klikken!</p>
         <form class="inputBoxes" action="includes/signup.inc.php" method="post">
