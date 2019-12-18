@@ -2,16 +2,18 @@
     margin: 0;
     padding: 0;
 }
+p{
+    color: darkslateblue;
+    margin: 3px;
+}
+
+
 body {
     background-image: url("../afbeeldingen/login.jpg");
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    margin: 0;
-    padding: 0;
-    border: 0;
-    outline: 0;
 }
 
 .whiteOverlay{
@@ -25,9 +27,11 @@ body {
 }
 
 /* Hoofdteksten */
-.h1{
+h1{
     text-align: center;
-    font-family: geneva;
+    font-family: Pristina;
+    color: rebeccapurple;
+    font-size: 50px;
 }
 .inputBoxes{
 

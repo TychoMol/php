@@ -2,6 +2,15 @@
     margin: 0;
     padding: 0;
 }
+p{
+    margin: 3px;
+    color: darkslateblue;
+}
+h1{
+    font-family: Pristina;
+    font-size: 50px;
+    color: rebeccapurple;
+}
 
 body {
     background-image: url("../afbeeldingen/profielpagina.jpg");
