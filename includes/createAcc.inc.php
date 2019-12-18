@@ -1,4 +1,5 @@
 <?php
+//alleen mogelijk op deze pagina te komen via de input van signup-submit, anders word je geredirect naar een andere pagina.
 if (isset($_POST['signup-submit'])){
 
     //connectie met database word gemaakt
@@ -16,26 +17,32 @@ if (isset($_POST['signup-submit'])){
         header("Location: ../createAcc.php?error=emptyfields&vnaam=". $voornaam . "&anaam=" . $achternaam ."&email=".$mail);
         exit();
     }
+
      elseif (!filter_var($mail, FILTER_VALIDATE_EMAIL)) {
          header("Location: ../createAcc.php?error=invalidmail&vnaam=". $voornaam . "&anaam=" . $achternaam);
          exit();
      }
+
      elseif (!preg_match("/^[a-zA-Z ]*$/", $voornaam)) {
          header("Location: ../createAcc.php?error=onjuistenaam&anaam=" . $achternaam. "&email=".$mail);
          exit();
      }
+
      elseif (!preg_match("/^[a-zA-Z]*$/", $achternaam)) {
          header("Location: ../createAcc.php?error=onjuistenaam&vnaam=" . $voornaam. "&email=".$mail);
          exit();
      }
+
      elseif (strlen($password) < 6){
         header("Location: ../CreateAcc.php?error=passwordlength&vnaam=".$voornaam."&anaam=".$achternaam."&email=".$mail);
         exit();
      }
+
      elseif ($password !== $passwordRepeat){
          header("Location: ../createAcc.php?error=passwordcheck&vnaam=".$voornaam."&anaam=".$achternaam."&email=".$mail);
          exit();
      }
+
      else{
         //de statement wordt prepared om sql injecties te voorkomen en email geselecteerd vanuit de database
         $sql = "SELECT email FROM accounts WHERE email=?";
@@ -44,6 +51,7 @@ if (isset($_POST['signup-submit'])){
             header("Location: ../createAcc.php?error=sqlerror1");
             exit();
         }
+
         //er word gekeken of de eerder geselecteerde email al bestaat op de website.
         else {
             mysqli_stmt_bind_param($stmt, "s", $mail);
@@ -54,6 +62,7 @@ if (isset($_POST['signup-submit'])){
                 header("Location: ../createAcc.php?error=emailingebruik&vnaam=" . $voornaam . "&anaam=" . $achternaam);
                 exit();
             }
+
             //hier word de input voorbereid ook met een prepared statement.
             else {
                 $sql = "INSERT INTO accounts (vnaam, anaam, email, passw) VALUES (?, ?, ?, ?)";
@@ -62,6 +71,7 @@ if (isset($_POST['signup-submit'])){
                     header("Location: ../createAcc.php?error=sqlerror2");
                     exit();
                 }
+
                 //wachtwoord wordt gehashed en vervolgens word alles in de database gezet
                 else {
                     $hashedPWD = password_hash($password, PASSWORD_DEFAULT);

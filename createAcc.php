@@ -63,7 +63,7 @@
         //Dit is het invul formulier om een nieuwe gebruiker aan te maken
         <p>Vul hieronder uw gegevens in om een account aan te maken.</p>
         <p>Heeft u al een account? Log dan in door <a href="login.php">HIER</a> te klikken!</p>
-        <form class="inputBoxes" action="includes/signup.inc.php" method="post">
+        <form class="inputBoxes" action="includes/createAcc.inc.php" method="post">
             <input type="text" name="vnaam" placeholder="Voornaam">
             <input type="text" name="anaam" placeholder="Achternaam">
             <input type="text" name="email" placeholder="Email">
