@@ -46,7 +46,7 @@ session_start();
                 if (isset($_SESSION['userID'])){
                     echo '<p class="login-status">U bent in gelogd!</p>';
                     echo '<form action="includes/logout.inc.php" method="post">';
-                        echo '<button type="submit" name="logout-submit">Loguit</button>';
+                    echo '<button type="submit" name="logout-submit">Loguit</button>';
                     echo '</form>';
                  }
                 else {
@@ -56,8 +56,9 @@ session_start();
                 }
                 if (isset($_SESSION['userID'])){
                     echo '<img src="./afbeeldingen/template.png" alt="">';
+                    echo '<p>Door op een groen blok te klikken kunt u de afspraak inplannen, u kunt tot maximaal 24 uur van tevoren de afspraak telefonisch afzeggen.</p>';
                 }
-            ?>
+                ?>
         </div>
     </body>
 </html>
