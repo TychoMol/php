@@ -70,7 +70,7 @@ session_start();
         echo '</form>';
         }
     else {
-        echo 'Maak eerst een account aan voordat u deze pagina bezoekt. Dit kan door <a href="createAcc.php">HIER</a> te klikken';
+        echo '<p>Maak eerst een account aan voordat u deze pagina bezoekt. Dit kan door <a href="createAcc.php">HIER</a> te klikken</p>';
         echo '<p>Heeft u al een account? Log dan in door <a href="login.php">HIER</a> te klikken!</p>';
     }
     ?>
