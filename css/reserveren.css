@@ -1,0 +1,88 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+p{
+    color: darkslateblue;
+    margin: 3px;
+}
+
+
+body {
+    background-image: url("../afbeeldingen/reserveren.jpg");
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.whiteOverlay{
+    background-color: rgba(255,255,255,0.75);
+    margin-top: 30px;
+    text-align: center;
+    margin-left: 10%;
+    margin-right: 10%;
+    font-family: Verdana;
+    padding: 10px;
+}
+
+/* Hoofdteksten */
+h1{
+    text-align: center;
+    font-family: Pristina;
+    color: rebeccapurple;
+    font-size: 50px;
+}
+.inputBoxes{
+
+}
+
+nav{
+    background-color: rgba(0,0,0,0.75);
+    height: 60px;
+}
+
+nav ul{
+    list-style-type: none;
+    float: left;
+}
+
+nav ul li{
+    float: left;
+    position: relative;
+}
+
+nav ul li a {
+    display: block;
+    font-family: Pristina, serif;
+    color: white;
+    font-size: 25px;
+    list-style-type: none;
+    text-decoration: none;
+    padding: 13px 40px;
+    text-align: center;
+}
+
+nav ul li ul {
+    display: none;
+    position: absolute;
+    background-color: rgba(0,0,0,0.75);
+    border-radius: 0px 0px 6px 6px;
+}
+
+nav ul li:hover ul {
+    display: block;
+}
+
+nav ul li ul li{
+    width: 170px;
+}
+
+nav ul li ul li a{
+    padding: 8px 14px;
+}
+nav ul li ul li a:hover {
+    background-color: rgba(255,255,255,0.75);
+    border-radius: 0px 0px 6px 6px;
+    color: black;
+}

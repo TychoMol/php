@@ -55,8 +55,7 @@ session_start();
                     echo '<p>Nog geen account? Klik <a href="createAcc.php">HIER</a> om een account aan te maken.</p>';
                 }
                 if (isset($_SESSION['userID'])){
-                    echo '<img src="./afbeeldingen/template.png" alt="">';
-                    echo '<p>Door op een groen blok te klikken kunt u de afspraak inplannen, u kunt tot maximaal 24 uur van tevoren de afspraak telefonisch afzeggen.</p>';
+                   echo '<p> Klik <a href="reserveren.php">HIER</a> om een datum en tijd te kiezen</p>';
                 }
                 ?>
         </div>

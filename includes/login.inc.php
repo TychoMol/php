@@ -11,7 +11,7 @@ if (isset($_POST['login-submit'])) {
         exit();
     }
     else {
-        $sql = "SELECT * FROM accounts WHERE email=?;";
+        $sql = "SELECT * FROM accounts WHERE email=?";
         $stmt = mysqli_stmt_init($conn);
         if (!mysqli_stmt_prepare($stmt, $sql)) {
             header("Location: ../login.php?error=sqlerror");
@@ -32,6 +32,7 @@ if (isset($_POST['login-submit'])) {
                     $_SESSION['userID'] = $row['ID'];
                     $_SESSION['vnaam'] = $row['vnaam'];
                     $_SESSION['anaam'] = $row['anaam'];
+                    $_SESSION['email'] = $row['email'];
 
                     header("Location: ../index.php?login=success&mail=".$mail);
                     exit();
